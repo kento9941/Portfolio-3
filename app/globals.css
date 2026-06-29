@@ -4,6 +4,7 @@
   --body-background: #151515;
   --page-background: #e6e6e6;
   --foreground: #151515;
+  --grey: #818181;
 
   /* Font Family */
 
@@ -20,7 +21,7 @@
     --large-size: clamp(0.4rem, 3.2vh, 6rem);
 
     /* Font Weight */
-    --bold: 600;
+    --bold: 500;
 
     /* Letter Spacing */
     --wide: 5rem;
@@ -45,4 +46,8 @@ main {
 
 .bold-text {
   font-weight: var(--bold);
+}
+
+.grey-text {
+  color: var(--grey);
 }
