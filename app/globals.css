@@ -21,10 +21,9 @@
     --large-size: clamp(0.4rem, 3.2vh, 6rem);
 
     /* Font Weight */
-    --bold: 500;
+    --bold: 600;
 
     /* Letter Spacing */
-    --wide: 5rem;
   }
 }
 
@@ -50,4 +49,27 @@ main {
 
 .grey-text {
   color: var(--grey);
+}
+
+.link {
+  position: relative;
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.5px;
+  background-color: var(--foreground);
+
+  /* animation */
+  transform-origin: left top;
+  transform: scaleX(0);
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.link:hover::after {
+  transform: scaleX(1);
 }

@@ -18,9 +18,9 @@ void main() {
 
   float speed = length(uVelocity);
 
-  vec2 distortion1 = delta * influence * speed * uStrength;
-  vec2 distortion2 = delta * influence * speed * uStrength;
-  vec2 distortion3 = delta * influence * speed * uStrength * 0.5;
+  vec2 distortion1 = delta * influence * speed * uStrength * 1.5;
+  vec2 distortion2 = delta * influence * speed * uStrength * 1.5;
+  vec2 distortion3 = delta * influence * speed * uStrength * 0.6;
 
   vec2 distortedUv1 = uv + distortion1;
   vec2 distortedUv2 = uv - distortion2;
@@ -39,9 +39,9 @@ void main() {
   float r2 = texture2D(uTexture, distortedUv2 - rOffset).r;
   float g2 = texture2D(uTexture, distortedUv2 - gOffset).g;
   float b2 = texture2D(uTexture, distortedUv2 - bOffset).b;
-  float r3 = texture2D(uTexture, distortedUv2 - rOffset).r;
-  float g3 = texture2D(uTexture, distortedUv2 - gOffset).g;
-  float b3 = texture2D(uTexture, distortedUv2 - bOffset).b;
+  float r3 = texture2D(uTexture, distortedUv3 - rOffset).r;
+  float g3 = texture2D(uTexture, distortedUv3 - gOffset).g;
+  float b3 = texture2D(uTexture, distortedUv3 - bOffset).b;
 
   float r = r1 * 0.3 + r2 * 0.3 + r3 * 0.4;
   float g = g1 * 0.3 + g2 * 0.3 + g3 * 0.4;

@@ -40,7 +40,7 @@ const PortraitPlane = () => {
         isFirstMove: true,
     });
 
-    const image = useTexture(publicPath("images/me.png"));
+    const image = useTexture(publicPath("images/me.webp"));
 
     const shader = useMemo(() => {
         return {

@@ -1,11 +1,16 @@
+'use client'
+ 
+import { usePathname  } from 'next/navigation'
 import Link from "next/link";
 
 const Header = () => {
+    const pathname = usePathname ();
     return (
         <>
             <Link
                 href="/"
                 className="bold-text fixed top-0 left-0 ml-[2rem] mt-[1rem] z-100"
+                style={{display: pathname === "/" ? "none" : "block"}}
             >
                 KENTO KAWAZOE
             </Link>
@@ -28,7 +33,7 @@ interface HeaderButtonProps {
 
 const HeaderButton = ({ href, text }: HeaderButtonProps) => {
     return (
-        <Link href={href}>
+        <Link href={href} className="link">
             {text}
         </Link>
     )
